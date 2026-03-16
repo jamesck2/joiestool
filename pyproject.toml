@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "joiestool"
+version = "0.1.0"
+description = "Gene-level comparison of highly similar bacterial genomes"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.8"
+dependencies = [
+    "biopython>=1.79",
+    "pyrodigal>=3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov"]
+
+[project.scripts]
+joiestool = "joiestool.cli:main"
+
+[tool.setuptools]
+packages = ["joiestool"]
+
+[tool.setuptools.package-dir]
+"" = "."
